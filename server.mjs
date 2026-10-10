@@ -192,6 +192,12 @@ const server = createServer(async (request, response) => {
   }
 
   if (request.method === "GET" || request.method === "HEAD") {
+    // Handle about-details route without .html extension
+    if (requestUrl.pathname === "/about-details") {
+      await handleStaticFile(request, response, "/about-details.html");
+      return;
+    }
+
     await handleStaticFile(request, response, requestUrl.pathname);
     return;
   }
