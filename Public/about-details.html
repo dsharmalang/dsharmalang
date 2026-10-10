@@ -10,6 +10,386 @@
     <meta name="theme-color" content="#f5f4ef" />
     <title>About Devesh Sharma — Creative Developer</title>
     <link rel="stylesheet" href="/styles.css" />
+    <style>
+      .bio-hero {
+        position: relative;
+        min-height: 500px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 80px 40px;
+        text-align: center;
+        background: linear-gradient(135deg, #f5f4ef 0%, #faf9f4 100%);
+        overflow: hidden;
+      }
+
+      .bio-hero::before {
+        position: absolute;
+        inset: 0;
+        background: 
+          radial-gradient(circle at 20% 50%, rgba(198, 243, 106, 0.1) 0%, transparent 50%),
+          radial-gradient(circle at 80% 80%, rgba(137, 184, 52, 0.1) 0%, transparent 50%);
+        pointer-events: none;
+        z-index: 0;
+      }
+
+      .bio-hero-content {
+        position: relative;
+        z-index: 1;
+        max-width: 700px;
+        animation: slideInUp 0.8s ease-out;
+      }
+
+      .bio-name {
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        margin: 0 0 20px 0;
+        background: linear-gradient(135deg, #22251f 0%, #5a6350 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .bio-subtitle {
+        font-size: 1.3rem;
+        color: #777e6a;
+        margin: 0;
+        font-weight: 400;
+      }
+
+      .bio-content-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        padding: 60px 0;
+      }
+
+      .bio-card-3d {
+        perspective: 1000px;
+        height: 100%;
+      }
+
+      .bio-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: 320px;
+        transition: transform 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+        transform-style: preserve-3d;
+      }
+
+      .bio-card-3d:hover .bio-card-inner {
+        transform: rotateY(5deg) rotateX(5deg);
+      }
+
+      .bio-card-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        padding: 30px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        border: 2px solid transparent;
+        background: white;
+        box-shadow: 0 10px 40px rgba(34, 37, 31, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .bio-card-3d:hover .bio-card-face {
+        box-shadow: 0 20px 60px rgba(34, 37, 31, 0.15);
+        border-color: #c6f36a;
+      }
+
+      .bio-card-icon {
+        font-size: 2.5rem;
+        margin-bottom: 15px;
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      .bio-card-icon:nth-child(1) { animation-delay: 0s; }
+      .bio-card-icon:nth-child(2) { animation-delay: 0.2s; }
+      .bio-card-icon:nth-child(3) { animation-delay: 0.4s; }
+
+      .bio-card-face h2 {
+        margin: 0 0 15px 0;
+        font-size: 1.5rem;
+        color: #22251f;
+        font-weight: 600;
+      }
+
+      .bio-card-face p {
+        margin: 0;
+        color: #62645e;
+        font-size: 0.95rem;
+        line-height: 1.6;
+      }
+
+      .bio-card-face ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style: none;
+      }
+
+      .bio-card-face li {
+        color: #62645e;
+        font-size: 0.95rem;
+        line-height: 1.8;
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 15px;
+      }
+
+      .bio-card-face li::before {
+        content: "→";
+        position: absolute;
+        left: 0;
+        color: #c6f36a;
+        font-weight: bold;
+      }
+
+      .skill-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 10px;
+      }
+
+      .skill-badge {
+        display: inline-block;
+        padding: 6px 14px;
+        background: linear-gradient(135deg, #c6f36a, #a5d350);
+        color: #22251f;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        box-shadow: 0 4px 15px rgba(198, 243, 106, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .skill-badge:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(198, 243, 106, 0.3);
+      }
+
+      .bio-timeline {
+        position: relative;
+        padding: 60px 0;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .timeline-item {
+        display: grid;
+        grid-template-columns: 1fr 2px 1fr;
+        gap: 2rem;
+        margin-bottom: 3rem;
+        align-items: center;
+        animation: fadeInUp 0.8s ease-out;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content:first-of-type {
+        order: 2;
+      }
+
+      .timeline-item:nth-child(even) .timeline-content:last-of-type {
+        order: 1;
+      }
+
+      .timeline-dot {
+        width: 16px;
+        height: 16px;
+        background: #c6f36a;
+        border: 3px solid white;
+        border-radius: 50%;
+        box-shadow: 0 0 0 3px #c6f36a;
+        margin: 0 auto;
+      }
+
+      .timeline-content {
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        border-left: 3px solid #c6f36a;
+        box-shadow: 0 5px 20px rgba(34, 37, 31, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .timeline-content:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(34, 37, 31, 0.12);
+        border-left-color: #a5d350;
+      }
+
+      .timeline-content h3 {
+        margin: 0 0 8px 0;
+        color: #22251f;
+        font-size: 1.1rem;
+      }
+
+      .timeline-content p {
+        margin: 0;
+        color: #62645e;
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .bio-cta-container {
+        padding: 80px 40px;
+        background: linear-gradient(135deg, #22251f, #3d4337);
+        color: white;
+        text-align: center;
+        border-radius: 16px;
+        margin-top: 60px;
+      }
+
+      .bio-cta-container h2 {
+        font-size: 2.2rem;
+        margin: 0 0 20px 0;
+        color: white;
+      }
+
+      .bio-cta-container p {
+        font-size: 1.1rem;
+        margin: 0 0 30px 0;
+        color: #deddd5;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 32px;
+        background: #c6f36a;
+        color: #22251f;
+        border: none;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(198, 243, 106, 0.3);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 32px;
+        background: transparent;
+        color: white;
+        border: 2px solid #c6f36a;
+        border-radius: 6px;
+        font-weight: 600;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-decoration: none;
+      }
+
+      .btn-secondary:hover {
+        background: #c6f36a;
+        color: #22251f;
+        transform: translateY(-3px);
+      }
+
+      .back-link-styled {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 30px;
+        color: #62645e;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+      }
+
+      .back-link-styled:hover {
+        color: #c6f36a;
+        transform: translateX(-5px);
+      }
+
+      @keyframes slideInUp {
+        from {
+          opacity: 0;
+          transform: translateY(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes float {
+        0%, 100% {
+          transform: translateY(0px);
+        }
+        50% {
+          transform: translateY(-10px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        .bio-name {
+          font-size: 2.5rem;
+        }
+
+        .timeline-item {
+          grid-template-columns: 1fr;
+        }
+
+        .timeline-dot {
+          display: none;
+        }
+
+        .timeline-content {
+          border-left: 3px solid #c6f36a;
+        }
+
+        .bio-content-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .cta-buttons {
+          flex-direction: column;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+        }
+      }
+    </style>
     <script src="/script.js" defer></script>
   </head>
   <body>
@@ -37,82 +417,158 @@
       </header>
 
       <main>
-        <section class="bio-section section-wrap section-pad">
-          <div class="bio-header">
-            <a href="/" class="back-link">← Back to portfolio</a>
-            <h1>Devesh Sharma</h1>
+        <section class="bio-hero">
+          <div class="bio-hero-content">
+            <a href="/" class="back-link-styled">← Back to portfolio</a>
+            <h1 class="bio-name">Devesh Sharma</h1>
             <p class="bio-subtitle">Creative Developer | Student | Bot & Plugin Maker</p>
           </div>
+        </section>
 
-          <div class="bio-content">
-            <div class="bio-grid">
-              <div class="bio-card">
-                <h2>Personal</h2>
-                <div class="bio-info">
+        <section class="section-wrap section-pad">
+          <div class="bio-content-grid">
+            <div class="bio-card-3d">
+              <div class="bio-card-inner">
+                <div class="bio-card-face">
+                  <div class="bio-card-icon">👤</div>
+                  <h2>Personal</h2>
                   <p><strong>Name:</strong> Devesh Sharma</p>
-                  <p><strong>Location:</strong> Rohini, Delhi</p>
-                  <p><strong>Current Status:</strong> Class 12 Student</p>
+                  <p style="margin-top: 10px;"><strong>Location:</strong> Rohini, Delhi</p>
+                  <p style="margin-top: 10px;"><strong>Status:</strong> Class 12 Student</p>
                 </div>
               </div>
+            </div>
 
-              <div class="bio-card">
-                <h2>Education</h2>
-                <div class="bio-info">
+            <div class="bio-card-3d">
+              <div class="bio-card-inner">
+                <div class="bio-card-face">
+                  <div class="bio-card-icon">🎓</div>
+                  <h2>Education</h2>
                   <p><strong>School:</strong> DAV Public School</p>
-                  <p><strong>Current Grade:</strong> Class 12</p>
-                  <p><strong>Focus:</strong> Science Stream</p>
+                  <p style="margin-top: 10px;"><strong>Grade:</strong> Class 12</p>
+                  <p style="margin-top: 10px;"><strong>Stream:</strong> Science</p>
                 </div>
               </div>
+            </div>
 
-              <div class="bio-card bio-card-wide">
-                <h2>Coding Journey</h2>
-                <div class="bio-info">
-                  <p><strong>Experience:</strong> 2 Years of Coding</p>
-                  <p>I've been learning and experimenting with code for the past 2 years. My journey started with curiosity and has grown into a passion for building creative solutions.</p>
-                  <p><strong>Status:</strong> Still Learning & Growing</p>
+            <div class="bio-card-3d">
+              <div class="bio-card-inner">
+                <div class="bio-card-face">
+                  <div class="bio-card-icon">⚡</div>
+                  <h2>Experience</h2>
+                  <p><strong>Coding Journey:</strong> 2 Years</p>
+                  <p style="margin-top: 10px;">Building, learning, and creating innovative solutions every day.</p>
                 </div>
               </div>
+            </div>
 
-              <div class="bio-card bio-card-wide">
-                <h2>Current Focus</h2>
-                <div class="bio-info">
-                  <ul class="bio-list">
-                    <li><strong>Making Bots:</strong> Building automation tools and helpful bot applications</li>
-                    <li><strong>Creating Plugins:</strong> Developing custom plugins that add functionality and features</li>
-                    <li><strong>Learning Mods (In Progress):</strong> Exploring mod development for games and applications</li>
-                  </ul>
-                </div>
-              </div>
-
-              <div class="bio-card bio-card-wide">
-                <h2>Skills & Languages</h2>
-                <div class="bio-info">
-                  <p><strong>Programming Languages:</strong></p>
+            <div class="bio-card-3d">
+              <div class="bio-card-inner">
+                <div class="bio-card-face">
+                  <div class="bio-card-icon">💻</div>
+                  <h2>Languages</h2>
                   <div class="skill-badges">
                     <span class="skill-badge">Java</span>
                     <span class="skill-badge">Python</span>
                     <span class="skill-badge">Node.js</span>
                     <span class="skill-badge">JavaScript</span>
-                    <span class="skill-badge">HTML</span>
-                    <span class="skill-badge">CSS</span>
+                    <span class="skill-badge">HTML/CSS</span>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="bio-card bio-card-wide">
-                <h2>Philosophy</h2>
-                <div class="bio-info">
-                  <p>I believe in learning by doing. Every project is an opportunity to explore new ideas, solve interesting problems, and create something that brings value or joy. Curiosity drives my learning, and creativity guides my building.</p>
+            <div class="bio-card-3d">
+              <div class="bio-card-inner">
+                <div class="bio-card-face">
+                  <div class="bio-card-icon">🚀</div>
+                  <h2>Current Focus</h2>
+                  <ul>
+                    <li>Building Bots & Automation</li>
+                    <li>Creating Plugins</li>
+                    <li>Learning Mod Development</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="bio-card-3d">
+              <div class="bio-card-inner">
+                <div class="bio-card-face">
+                  <div class="bio-card-icon">💡</div>
+                  <h2>Philosophy</h2>
+                  <p>Learning by doing. Every project is an opportunity to explore new ideas and create something amazing.</p>
                 </div>
               </div>
             </div>
           </div>
+        </section>
 
-          <div class="bio-cta">
-            <p>Interested in collaborating or want to learn more?</p>
-            <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; justify-content: center;">
-              <a class="button button-lime" href="/#contact">Get in touch <span>↗</span></a>
-              <a class="button button-dark" href="mailto:dsharma.c9@gmail.com">Email me <span>↗</span></a>
+        <section class="section-wrap section-pad">
+          <div style="text-align: center; margin-bottom: 60px;">
+            <p class="eyebrow" style="justify-content: center;">MY JOURNEY</p>
+            <h2 style="font-family: var(--display); font-size: 2.5rem; margin: 20px 0; color: #22251f;">From Curiosity to Creation</h2>
+          </div>
+          
+          <div class="bio-timeline">
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Started Learning Code</h3>
+                <p>Began the coding journey with curiosity and determination to understand how technology works.</p>
+              </div>
+              <div class="timeline-dot"></div>
+              <div></div>
+            </div>
+
+            <div class="timeline-item">
+              <div></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>First Bot & Plugins</h3>
+                <p>Created first automation tools and plugins. Learning by building real projects.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>2 Years of Experience</h3>
+                <p>Continuously improving skills in Java, Python, and Node.js with hands-on projects.</p>
+              </div>
+              <div class="timeline-dot"></div>
+              <div></div>
+            </div>
+
+            <div class="timeline-item">
+              <div></div>
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <h3>Exploring Mods (In Progress)</h3>
+                <p>Currently learning mod development and pushing creative boundaries.</p>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-content">
+                <h3>Always Learning</h3>
+                <p>Forever curious. Every day is a new opportunity to build something extraordinary.</p>
+              </div>
+              <div class="timeline-dot"></div>
+              <div></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section-wrap section-pad">
+          <div class="bio-cta-container">
+            <h2>Let's Create Something Amazing</h2>
+            <p>Have a project in mind? Want to collaborate? Let's talk!</p>
+            <div class="cta-buttons">
+              <a href="mailto:dsharma.c9@gmail.com" class="btn-primary">
+                📧 Email Me
+              </a>
+              <a href="https://github.com/dsharmalang" target="_blank" rel="noopener noreferrer" class="btn-secondary">
+                GitHub Profile →
+              </a>
             </div>
           </div>
         </section>
