@@ -7,12 +7,12 @@
       name="description"
       content="A creative developer portfolio featuring bots, plugins and mods."
     />
-    <meta name="theme-color" content="#05090e" />
+    <meta name="theme-color" content="#000000" />
     <title>Creative Developer — Portfolio</title>
     <link rel="stylesheet" href="/styles.css" />
     <style>
       html, body {
-        background: #05090e;
+        background: #000000;
       }
 
       body {
@@ -20,7 +20,7 @@
       }
 
       body::before {
-        opacity: 0.12;
+        opacity: 0;
       }
 
       #matrix-canvas {
@@ -28,7 +28,7 @@
         inset: 0;
         z-index: 0;
         pointer-events: none;
-        opacity: 0.9;
+        opacity: 1;
       }
 
       .site-shell,
@@ -40,8 +40,8 @@
       }
 
       .site-shell {
-        background: rgba(245, 244, 239, 0.85);
-        backdrop-filter: blur(2px);
+        background: transparent;
+        backdrop-filter: none;
       }
 
       .hero,
@@ -49,7 +49,102 @@
       .skills,
       .contact,
       .site-footer {
-        background: rgba(245, 244, 239, 0.7);
+        background: transparent !important;
+      }
+
+      .site-header {
+        background: rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(198, 243, 106, 0.2);
+      }
+
+      /* Make all text light/readable on dark background */
+      .site-shell, main {
+        color: #ffffff;
+      }
+
+      h1, h2, h3 {
+        color: #c6f36a;
+      }
+
+      .eyebrow {
+        color: rgba(198, 243, 106, 0.8);
+      }
+
+      .button-dark {
+        background: rgba(0, 0, 0, 0.6);
+        border: 2px solid rgba(198, 243, 106, 0.8);
+        color: #c6f36a;
+      }
+
+      .button-dark:hover {
+        background: rgba(198, 243, 106, 0.2);
+      }
+
+      .text-link {
+        color: #c6f36a;
+      }
+
+      .button-lime {
+        background: #c6f36a;
+        color: #000000;
+      }
+
+      .button-lime:hover {
+        background: rgba(198, 243, 106, 0.8);
+      }
+
+      a {
+        color: #c6f36a;
+      }
+
+      .about-copy p, .section-description {
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .wordmark {
+        color: #ffffff;
+      }
+
+      .wordmark-mark {
+        background: #c6f36a;
+        color: #000000;
+      }
+
+      .detail-item {
+        border: 1px solid rgba(198, 243, 106, 0.3);
+        background: rgba(198, 243, 106, 0.05);
+      }
+
+      .skill-card {
+        background: rgba(198, 243, 106, 0.08);
+        border: 1px solid rgba(198, 243, 106, 0.3);
+      }
+
+      .code-card {
+        background: rgba(0, 0, 0, 0.8);
+        border: 2px solid rgba(198, 243, 106, 0.6);
+      }
+
+      .code-topbar {
+        background: rgba(198, 243, 106, 0.1);
+        border-bottom: 1px solid rgba(198, 243, 106, 0.3);
+      }
+
+      .code-content {
+        color: #c6f36a;
+      }
+
+      .contact-note {
+        color: rgba(198, 243, 106, 0.9);
+      }
+
+      .site-footer {
+        border-top: 1px solid rgba(198, 243, 106, 0.2);
+        color: rgba(255, 255, 255, 0.7);
+      }
+
+      .footer-wordmark {
+        color: #ffffff;
       }
     </style>
     <script src="/matrix.js" defer></script>
@@ -145,26 +240,38 @@
           </div>
           <div class="about-copy">
             <p class="about-lead">
-              I'm a student who loves figuring out how things work —
-              and then making them do something new.
+              I'm Devesh Sharma, a Class 12 student from Rohini, Delhi, currently studying at DAV Public School.
             </p>
             <p>
-              I'm learning Java, Python and Node.js, and enjoy using code to make bots,
-              plugins and mods. I think a creative eye and a curious mind make
-              a pretty good team.
+              I have 2 years of coding experience and I'm passionate about creating bots, plugins, and mods. 
+              I'm constantly learning and experimenting with new technologies to bring ideas to life.
             </p>
             <div class="about-details">
               <div class="detail-item">
                 <span class="detail-icon">✳</span>
-                <span><small>MAKING</small><strong>Bots, plugins &amp; mods</strong></span>
+                <span><small>NAME</small><strong>Devesh Sharma</strong></span>
               </div>
               <div class="detail-item">
                 <span class="detail-icon detail-icon-school">⌘</span>
-                <span><small>LEARNING</small><strong>Java, Python &amp; Node.js</strong></span>
+                <span><small>LOCATION</small><strong>Rohini, Delhi</strong></span>
               </div>
               <div class="detail-item">
                 <span class="detail-icon">✳</span>
-                <span><small>APPROACH</small><strong>Curious, always</strong></span>
+                <span><small>EXPERIENCE</small><strong>2 Years Coding</strong></span>
+              </div>
+            </div>
+            <div class="about-details" style="margin-top: 1.5rem;">
+              <div class="detail-item">
+                <span class="detail-icon">✳</span>
+                <span><small>SCHOOL</small><strong>DAV Public School</strong></span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon detail-icon-school">⌘</span>
+                <span><small>CLASS</small><strong>12th Standard</strong></span>
+              </div>
+              <div class="detail-item">
+                <span class="detail-icon">✳</span>
+                <span><small>FOCUS</small><strong>Bots, Plugins & Mods</strong></span>
               </div>
             </div>
             <a class="button button-dark" href="/about-details" style="margin-top: 2rem;">Learn more about me <span>↗</span></a>
