@@ -670,7 +670,7 @@ textarea:focus-visible {
 .about-index {
   position: absolute;
   z-index: 0;
-  right: 0;
+  right: 0.15em;
   bottom: 14px;
   pointer-events: none;
   color: transparent;
@@ -1298,7 +1298,7 @@ textarea:focus-visible {
   }
 
   .about-index {
-    right: 0;
+    right: 0.15em;
     bottom: 8px;
     font-size: 96px;
   }
