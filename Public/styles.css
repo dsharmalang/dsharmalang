@@ -4,7 +4,7 @@
   --surface: #121a0e;
   --surface-2: #1a2414;
   --ink: #ffffff;
-  --lime: #c6f36a;
+  --lime: #ffffff;
   --line: #2f3d25;
   --green-line: #3d5030;
   --mono: "Cascadia Code", "Courier New", monospace;
@@ -82,7 +82,7 @@ textarea:focus-visible {
   gap: 10px;
   color: var(--ink);
   font-family: var(--display);
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 700;
   letter-spacing: 0.06em;
 }
@@ -110,7 +110,7 @@ textarea:focus-visible {
   align-items: center;
   gap: 39px;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .site-nav > a:not(.nav-cta) {
@@ -130,7 +130,7 @@ textarea:focus-visible {
   border: 1px solid var(--ink);
   border-radius: 2px;
   color: var(--ink);
-  font-size: 12px;
+  font-size: 14px;
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
@@ -168,7 +168,7 @@ textarea:focus-visible {
 .detail-item small,
 .contact-form label > span:first-child {
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0.1em;
 }
 
@@ -232,7 +232,7 @@ textarea:focus-visible {
   border: 0;
   border-radius: 2px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
 }
@@ -260,7 +260,7 @@ textarea:focus-visible {
 
 .text-link {
   color: var(--ink);
-  font-size: 12px;
+  font-size: 14px;
   transition: color 180ms ease;
 }
 
@@ -275,7 +275,7 @@ textarea:focus-visible {
   margin-top: 43px;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .location-icon {
@@ -362,7 +362,7 @@ textarea:focus-visible {
   border-bottom: 1px solid var(--line);
   color: var(--ink);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
 }
 
 .window-dots {
@@ -400,7 +400,7 @@ textarea:focus-visible {
   padding: 17px 20px 15px;
   color: var(--ink);
   font-family: var(--mono);
-  font-size: 11px;
+  font-size: 13px;
   line-height: 1.3;
 }
 
@@ -435,7 +435,7 @@ textarea:focus-visible {
   border-top: 1px solid var(--line);
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 11px;
 }
 
 .footer-pulse {
@@ -454,7 +454,7 @@ textarea:focus-visible {
   gap: 3px;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.15em;
   transform: translateZ(15px);
 }
@@ -470,7 +470,7 @@ textarea:focus-visible {
   box-shadow: inset 0 0 0 1px var(--lime);
   color: var(--ink);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   line-height: 1.5;
   text-align: center;
@@ -526,7 +526,7 @@ textarea:focus-visible {
   left: 25px;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.7;
   transform: translateZ(32px) rotate(-6deg);
 }
@@ -540,7 +540,7 @@ textarea:focus-visible {
   gap: 14px;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.11em;
 }
 
@@ -605,7 +605,7 @@ textarea:focus-visible {
 .about-copy p {
   margin: 0 0 17px;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.9;
 }
 
@@ -647,7 +647,7 @@ textarea:focus-visible {
 .detail-icon-class {
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 10px;
+  font-size: 12px;
 }
 
 .detail-item small,
@@ -658,12 +658,12 @@ textarea:focus-visible {
 .detail-item small {
   margin-bottom: 4px;
   color: var(--lime);
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .detail-item strong {
   color: var(--ink);
-  font-size: 10px;
+  font-size: 13px;
   font-weight: 600;
 }
 
@@ -697,7 +697,7 @@ textarea:focus-visible {
 .section-description {
   margin: 0;
   color: var(--ink);
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .skill-grid {
@@ -737,7 +737,7 @@ textarea:focus-visible {
 
 .card-index {
   color: var(--lime);
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .skill-icon {
@@ -814,7 +814,7 @@ textarea:focus-visible {
   max-width: 250px;
   margin: 0;
   color: var(--ink);
-  font-size: 11px;
+  font-size: 14px;
   line-height: 1.65;
 }
 
@@ -830,7 +830,7 @@ textarea:focus-visible {
   border-radius: 2px;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .card-arrow {
@@ -851,7 +851,7 @@ textarea:focus-visible {
 
 .skills-footer p {
   margin: 0;
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .footer-star {
@@ -866,7 +866,7 @@ textarea:focus-visible {
   margin-left: auto;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 
@@ -927,7 +927,7 @@ textarea:focus-visible {
   max-width: 330px;
   margin: 22px 0 25px;
   color: var(--ink);
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.8;
 }
 
@@ -937,7 +937,7 @@ textarea:focus-visible {
   gap: 8px;
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.08em;
 }
 
@@ -960,7 +960,7 @@ textarea:focus-visible {
 
 .contact-form label > span:first-child {
   color: var(--lime);
-  font-size: 8px;
+  font-size: 12px;
 }
 
 .contact-form input:not([type="checkbox"]),
@@ -972,7 +972,7 @@ textarea:focus-visible {
   border-radius: 0;
   background: transparent;
   color: var(--ink);
-  font-size: 12px;
+  font-size: 14px;
   resize: vertical;
 }
 
@@ -1000,7 +1000,7 @@ textarea:focus-visible {
   max-width: 395px;
   color: var(--ink);
   font-family: var(--sans);
-  font-size: 10px;
+  font-size: 13px;
   letter-spacing: 0;
   line-height: 1.6;
 }
@@ -1021,7 +1021,7 @@ textarea:focus-visible {
   min-height: 14px;
   margin: -6px 0 0;
   color: var(--lime);
-  font-size: 11px;
+  font-size: 14px;
 }
 
 .form-status[data-state="error"] {
@@ -1032,7 +1032,7 @@ textarea:focus-visible {
 .privacy-note {
   margin: -10px 0 0;
   color: var(--lime);
-  font-size: 9px;
+  font-size: 12px;
   line-height: 1.6;
 }
 
@@ -1050,7 +1050,7 @@ textarea:focus-visible {
 }
 
 .footer-wordmark {
-  font-size: 10px;
+  font-size: 13px;
 }
 
 .footer-wordmark .wordmark-mark {
@@ -1062,7 +1062,7 @@ textarea:focus-visible {
 .site-footer > p {
   margin: 0;
   color: var(--ink);
-  font-size: 9px;
+  font-size: 12px;
   text-align: center;
 }
 
@@ -1075,7 +1075,7 @@ textarea:focus-visible {
 .footer-year {
   color: var(--lime);
   font-family: var(--mono);
-  font-size: 8px;
+  font-size: 12px;
   letter-spacing: 0.05em;
 }
 
@@ -1144,7 +1144,7 @@ textarea:focus-visible {
   }
 
   .detail-item strong {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 
@@ -1292,7 +1292,7 @@ textarea:focus-visible {
   }
 
   .detail-item strong {
-    font-size: 9px;
+    font-size: 12px;
   }
 
   .about-index {
@@ -1399,7 +1399,7 @@ textarea:focus-visible {
   }
 
   .detail-item strong {
-    font-size: 10px;
+    font-size: 13px;
   }
 }
 
