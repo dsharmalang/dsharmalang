@@ -8,7 +8,7 @@ class MatrixCanvas {
     this.columns = [];
 
     // BRIGHTNESS CONTROL: 0.1 = very faint, 0.3 = soft (default), 0.6 = bright, 1 = original
-    this.brightness = 0.3;
+    this.brightness = 0.6;
 
     this.characterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/\\|{}[]()!@#$%^&*+-=;:アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
 
