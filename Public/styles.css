@@ -1420,3 +1420,191 @@ textarea:focus-visible {
     transform: none;
   }
 }
+/* ==========================================================
+   CRYSTAL CLEAR OVERRIDES
+   Paste this at the VERY BOTTOM of Public/styles.css
+   (below the prefers-reduced-motion block).
+   ========================================================== */
+
+/* 1. Remove the grain/noise film that sits on top of the whole page */
+body::before {
+  display: none;
+}
+
+/* 2. Crisper text rendering (antialiased makes text look thinner/lighter) */
+body {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: optimizeLegibility;
+}
+
+/* 3. Images and SVG icons: always full strength */
+img,
+svg {
+  opacity: 1;
+  filter: none;
+}
+
+/* 4. Main text: full dark ink */
+.eyebrow,
+.about-copy .about-lead,
+.detail-item strong,
+.contact-form input:not([type="checkbox"]),
+.contact-form textarea {
+  color: #22251f;
+}
+
+/* 5. Body / paragraph text: very dark, easy to read */
+.hero-intro,
+.about-copy p,
+.skill-card p,
+.contact-copy > p:not(.eyebrow),
+.contact-form .consent-label > span:first-child,
+.site-footer > p,
+.section-description,
+.skills-footer,
+.skills-footer p {
+  color: #2f332a;
+}
+
+/* 6. Small labels, captions and mono text: dark grey instead of pale grey */
+.hero-location,
+.scroll-cue,
+.art-caption,
+.art-note,
+.card-index,
+.detail-item small,
+.skill-tags span,
+.card-arrow,
+.language-list,
+.contact-note,
+.contact-form label > span:first-child,
+.privacy-note,
+.back-to-top,
+.footer-year {
+  color: #3a3e34;
+}
+
+.about-copy p {
+  color: #2f332a;
+}
+
+/* 7. Placeholder text inside the form */
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #6b6d62;
+  opacity: 1;
+}
+
+/* 8. Green accent text and symbols: deeper green so they stay sharp */
+.headline-accent,
+.section-heading h2 span,
+.contact-copy h2 span {
+  color: #55701a;
+}
+
+.headline-period {
+  color: #7fb013;
+}
+
+.wordmark-dot,
+.location-icon,
+.detail-icon,
+.art-star,
+.footer-star,
+.contact-note span,
+.site-footer > p span {
+  color: #5f7a1f;
+}
+
+.detail-icon-school {
+  color: #6e5a85;
+}
+
+.detail-icon-class {
+  color: #7d5632;
+}
+
+.icon-plugin {
+  color: #6e5a85;
+}
+
+.icon-mod {
+  color: #7d5632;
+}
+
+/* 9. Skill-card robot icon */
+.icon-bot {
+  border-color: #4d5e3f;
+}
+
+.icon-bot::before {
+  background: #4d5e3f;
+}
+
+.bot-eye {
+  background: #3f5232;
+}
+
+.bot-mouth {
+  border-bottom-color: #3f5232;
+}
+
+/* 10. Solid icon circles, stronger borders and divider lines */
+.skill-icon {
+  background: #ffffff;
+}
+
+.detail-icon {
+  border-color: #b9b8ac;
+}
+
+.contact-form input:not([type="checkbox"]),
+.contact-form textarea {
+  border-bottom-color: #8d8e82;
+}
+
+.language-list i {
+  background: #6b6d62;
+}
+
+.skill-tags span {
+  border-color: rgb(52 55 43 / 45%);
+}
+
+/* 11. Decorative rings and orbits: clearer lines */
+.art-ring {
+  border-color: rgb(66 78 48 / 45%);
+}
+
+.contact-orbit,
+.contact-orbit::before,
+.contact-orbit::after {
+  border-color: rgb(111 134 62 / 40%);
+}
+
+/* 12. Code card on the hero (light text on dark background) */
+.code-topbar {
+  color: #e5e6de;
+}
+
+.line-number {
+  color: #a9aea0;
+}
+
+.code-comment {
+  color: #c3cab5;
+}
+
+.code-footer {
+  color: #e5e6de;
+}
+
+/* 13. Stop 3D transforms from blurring the skill-card text */
+.skill-card {
+  transform-style: flat;
+}
+
+.skill-card > * {
+  transform: none;
+}
