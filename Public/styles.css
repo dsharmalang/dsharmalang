@@ -669,8 +669,10 @@ textarea:focus-visible {
 
 .about-index {
   position: absolute;
-  right: -5px;
-  bottom: -77px;
+  z-index: 0;
+  right: 0;
+  bottom: 14px;
+  pointer-events: none;
   color: transparent;
   -webkit-text-stroke: 1px var(--lime);
   font-family: var(--display);
@@ -1296,8 +1298,8 @@ textarea:focus-visible {
   }
 
   .about-index {
-    right: -11px;
-    bottom: -42px;
+    right: 0;
+    bottom: 8px;
     font-size: 96px;
   }
 
