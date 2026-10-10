@@ -3,7 +3,7 @@
 A responsive personal portfolio built with plain HTML, CSS, browser JavaScript,
 and a small Node.js server. No packages are required.
 
-The site is published at [https://dsharmalang.github.io](https://dsharmalang.github.io)
+The site is published at [https://vercel.com/dsdev2/myportfolio)
 with GitHub Pages. The deployment workflow publishes the `Public/` directory
 whenever changes are pushed to `main`.
 
