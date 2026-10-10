@@ -6,6 +6,10 @@ class MatrixCanvas {
     this.pointer = { x: window.innerWidth / 2, y: window.innerHeight / 2, active: false };
     this.fontSize = 11;
     this.columns = [];
+
+    // BRIGHTNESS CONTROL: 0.1 = very faint, 0.3 = soft (default), 0.6 = bright, 1 = original
+    this.brightness = 0.3;
+
     this.characterSet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789<>/\\|{}[]()!@#$%^&*+-=;:アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン';
 
     if (!this.canvas.parentNode) {
@@ -82,14 +86,14 @@ class MatrixCanvas {
       column.alpha = Math.min(1, column.alpha + 0.08);
     }
 
-    const textAlpha = column.alpha * (1 - influence * 0.88);
+    // Final opacity of the falling characters (scaled down by this.brightness)
+    const textAlpha = column.alpha * (1 - influence * 0.88) * this.brightness;
 
-    this.ctx.shadowColor = `rgba(198, 243, 106, ${Math.max(textAlpha * 0.7, 0.15)})`;
-    this.ctx.shadowBlur = 22;
-    this.ctx.shadowOffsetX = 0;
-    this.ctx.shadowOffsetY = 0;
-    
-    this.ctx.fillStyle = `rgba(198, 243, 106, ${textAlpha})`;
+    // Glow removed so the background stays soft and the page text stays sharp
+    this.ctx.shadowBlur = 0;
+    this.ctx.shadowColor = 'transparent';
+
+    this.ctx.fillStyle = `rgba(120, 170, 70, ${textAlpha})`;
     this.ctx.textBaseline = 'top';
 
     for (let i = 0; i < column.chars.length; i++) {
@@ -99,9 +103,6 @@ class MatrixCanvas {
         this.ctx.fillText(column.chars[i], column.x, yy);
       }
     }
-
-    this.ctx.shadowBlur = 0;
-    this.ctx.shadowColor = 'transparent';
 
     column.y += column.speed + influence * 1.5;
     if (column.y > this.canvas.height + this.fontSize) {
@@ -120,7 +121,8 @@ class MatrixCanvas {
     this.ctx.fillStyle = 'rgba(0, 0, 0, 0.25)';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
-    this.ctx.strokeStyle = 'rgba(198, 243, 106, 0.04)';
+    // Faint scanlines (made subtler)
+    this.ctx.strokeStyle = `rgba(120, 170, 70, ${0.04 * this.brightness})`;
     this.ctx.lineWidth = 1;
     for (let i = 0; i < this.canvas.height; i += 5) {
       this.ctx.beginPath();
@@ -129,7 +131,8 @@ class MatrixCanvas {
       this.ctx.stroke();
     }
 
-    this.ctx.font = `bold ${this.fontSize}px "Cascadia Code", monospace`;
+    // Normal weight instead of bold, so characters are thinner and dimmer
+    this.ctx.font = `${this.fontSize}px "Cascadia Code", monospace`;
     this.columns.forEach((column) => this.drawColumn(column));
     requestAnimationFrame(() => this.loop());
   }
